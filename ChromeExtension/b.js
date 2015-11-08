@@ -1,1 +1,1 @@
-chrome.runtime.onConnect.addListener(function(e){function o(o){"get-sourceId"==o&&chrome.desktopCapture.chooseDesktopMedia(["screen","window"],e.sender.tab,n)}function n(o){return console.log("sourceId",o),o&&o.length?void e.postMessage({sourceId:o}):e.postMessage("PermissionDeniedError")}e.onMessage.addListener(o)});
+chrome.runtime.onConnect.addListener(function(e){function n(n){"get-sourceId"==n&&chrome.desktopCapture.chooseDesktopMedia(["screen","window"],e.sender.tab,o)}function o(n){e.postMessage({sourceId:n})}e.onMessage.addListener(n)});
