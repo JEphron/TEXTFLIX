@@ -1,6 +1,5 @@
 // this background script is used to invoke desktopCapture API
 // to capture screen-MediaStream.
-console.log("background script started")
 var session = ['screen', 'window'];
 
 chrome.runtime.onConnect.addListener(function (port) {
