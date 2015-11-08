@@ -1,6 +1,7 @@
 // this content-script plays role of medium to publish/subscribe messages from webpage to the background script
 
 ws = new WebSocket("ws://localhost:8088");
+
 ws.onopen = function() {
     console.log("connected to server dawg")
 }
@@ -42,13 +43,13 @@ function startStreamFrom(sourceId) {
             video.src = url;
 
             setInterval(function(){
-                console.log("are you still there?")
                 ctx.drawImage(video, 0, 0);
                 data = canvas.toDataURL();
-                // // data = data.replace(/^data:image\/(png|jpg);base64,/, "");
-                ws.send(data); // this is the actual data, supposedly
+                ws.send(data); 
 
             }, 100)
+
+            // if we didn't have to worry about buffering we could uncomment this and go full speed 
 
             // video.addEventListener('timeupdate', function() {
             //     this.pause(); // should be useless
@@ -56,11 +57,10 @@ function startStreamFrom(sourceId) {
             //     data = canvas.toDataURL();
             //     // data = data.replace(/^data:image\/(png|jpg);base64,/, "");
             //     ws.send(data); // this is the actual data, supposedly
-                
             //     if (this.duration > this.currentTime)
             //         this.play(); // should be useless
             // }, false);
-///
+
             // video.addEventListener('ended', function() {
             // }, false);
 

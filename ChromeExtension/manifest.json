@@ -1,7 +1,7 @@
 
 {
-    "name" : "Screen Capturing",
-    "author": "Muaz Khan",
+    "name" : "Screen Capturing + WebSockets",
+    "author": "Jordan Ephron / Muaz Khan",
     "version" : "3.3",
     "manifest_version" : 2,
     "minimum_chrome_version": "34",
@@ -10,7 +10,6 @@
     "background": {
         "scripts": ["background-script.js"],
         "persistent": true
-        // "page": "background.html"
     },
     "content_scripts": [ {
        "js": [ "content-script.js" ],
