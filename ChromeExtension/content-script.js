@@ -47,7 +47,7 @@ function startStreamFrom(sourceId) {
                 data = canvas.toDataURL();
                 ws.send(data); 
 
-            }, 100)
+            }, 300)
 
             // if we didn't have to worry about buffering we could uncomment this and go full speed 
 
